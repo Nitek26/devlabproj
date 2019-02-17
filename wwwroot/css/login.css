@@ -1,0 +1,36 @@
+﻿body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #01020f;
+}
+
+#loginForm-wrapper {
+    background-image: url('../images/login-background.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#shadow-wrapper {
+    background-color: #01020f;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+}
+
+.inner-shadow {
+    box-shadow: inset 200px -380px 400px 480px #01020f;
+    -moz-box-shadow: inset 200px -300px 400px 480px #01020f;
+    -webkit-box-shadow: inset 200px -300px 400px 480px #01020f;
+}
+
+.inner-shadow-light {
+    box-shadow: inset 20px -20px 200px 70px #010213;
+    -moz-box-shadow: inset 20px -20px 200px 70px #010213;
+    -webkit-box-shadow: inset 20px -20px 200px 0px #010213;
+}

@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DevLab.Data;
+using DevLab.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MyDevLab.Data;
-using MyDevLab.ViewModels;
 
-namespace MyDevLab.Controllers
+namespace DevLab.Controllers
 {
     [AllowAnonymous]
     public class LoginController : Controller
     {
-        private readonly SignInManager<LabUser> _signInManager;
-        private readonly ILogger<LoginController> _logger;
+        private readonly SignInManager<DevLabUser> _signInManager;
+        private readonly ILogger<LoginVM> _logger;
         public string ReturnUrl { get; set; }
 
 
-        public LoginController(SignInManager<LabUser> signInManager, ILogger<LoginController> logger)
+        public LoginController(SignInManager<DevLabUser> signInManager, ILogger<LoginVM> logger)
         {
             _signInManager = signInManager;
             _logger = logger;
@@ -43,7 +43,7 @@ namespace MyDevLab.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM loginVM, string returnUrl = null)
         {
-            returnUrl = returnUrl ?? Url.Content("~/");
+            returnUrl = returnUrl ?? Url.Content("~/Home/Index");
 
             if (ModelState.IsValid)
             {
@@ -67,13 +67,15 @@ namespace MyDevLab.Controllers
             return View(loginVM);
         }
 
-        public async Task<IActionResult> LogOut(string returnUrl = null)
+        public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
 
 
             return LocalRedirect(Url.Content("~/"));
+
         }
+
     }
 }
