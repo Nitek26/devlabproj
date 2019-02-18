@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DevLab.Data;
-using DevLab.ViewModels;
+using MyDevLab.Data;
+using MyDevLab.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace DevLab.Controllers
+namespace MyDevLab.Controllers
 {
     [AllowAnonymous]
     public class LoginController : Controller
     {
-        private readonly SignInManager<DevLabUser> _signInManager;
+        private readonly SignInManager<LabUser> _signInManager;
         private readonly ILogger<LoginVM> _logger;
         public string ReturnUrl { get; set; }
 
 
-        public LoginController(SignInManager<DevLabUser> signInManager, ILogger<LoginVM> logger)
+        public LoginController(SignInManager<LabUser> signInManager, ILogger<LoginVM> logger)
         {
             _signInManager = signInManager;
             _logger = logger;
@@ -58,7 +58,7 @@ namespace DevLab.Controllers
 
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError("LoginError", "Invalid login attempt.");
                     return View(loginVM);
                 }
             }
