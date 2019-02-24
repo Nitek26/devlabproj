@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs
+/MyDevLab.DataAccess/bin/Debug/netcoreapp2.2
+/MyDevLab.DataAccess/obj/Debug/netcoreapp2.2

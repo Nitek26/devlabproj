@@ -1,0 +1,120 @@
+﻿#LivePreviewTabs {
+    height: 435px !important;
+}
+
+    #LivePreviewTabs > .k-content.k-state-active.box-top.box-shadow {
+        height: 100% !important;
+    }
+
+#livePreviewTemplate #container {
+    margin: 0 auto;
+    width: 100%;
+}
+
+#livePreviewTemplate #webPush {
+    margin: 0 auto;
+    position: relative;
+    width: 365px;
+    min-height: 380px;
+}
+
+#livePreviewTemplate #bigImage {
+    height: 180px;
+    width: 365px;
+    display: block;
+}
+
+#bodyContainer {
+    background-color: #2A2A2A;
+    padding: 25px 15px 35px 15px;
+}
+
+#livePreviewTemplate #icon {
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+
+#livePreviewTemplate #icon-default {
+    float: left;
+    width: 18px;
+    height: 16px;
+}
+
+#livePreviewTemplate #msgTxt {
+    float: left;
+    padding: 0 15px;
+    width: 255px;
+}
+
+#livePreviewTemplate p {
+    margin: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 12px;
+    opacity: 0.90;
+}
+
+    #livePreviewTemplate p.subject {
+        font-weight: bold;
+    }
+
+    #livePreviewTemplate p.sender {
+        font-size: 8px;
+    }
+
+#livePreviewTemplate .actions-wrapper {
+    background-color: #2A2A2A;
+    padding: 0 15px;
+}
+
+#actionsWithImgs {
+    height: 70px;
+}
+
+#actionsPlain {
+    height: 50px;
+}
+
+#actionsTitlesRow {
+    margin-top: 20px
+}
+
+#livePreviewTemplate .prop {
+    height: 55px;
+    float: right;
+    width: 1px;
+}
+
+#livePreviewTemplate .prop1 {
+    height: 1px;
+    float: right;
+    width: 1px;
+}
+
+#livePreviewTemplate .action-image {
+    width: 18px;
+    height: 14px;
+}
+
+#livePreviewTemplate .action-container {
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+
+#livePreviewTemplate .action-btn {
+    height: 35px;
+    background-color: #3a3737;
+    width: 165px;
+    line-height: 35px;
+}
+
+#LivePreviewSubmit {
+    margin-bottom: 0 !important;
+}
+
+.upload-edit-btns {
+    text-align: right;
+    padding: .6em
+}

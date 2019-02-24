@@ -1,0 +1,114 @@
+﻿@using MyDevLab.ViewModels.WebPush;
+@model LivePreviewVM;
+
+@{
+    Layout = "_Layout";
+}
+<link href="~/css/WebPushLivePreview.css" rel="stylesheet" />
+
+<div id="livePreviewTemplate">
+    <div id="container">
+        <div id="webPush">
+            @if (!string.IsNullOrWhiteSpace(@Model.BigImageImg))
+            {
+                <img id="bigImage" src="@Model.BigImageImg" />
+            }
+            <div id="bodyContainer">
+                @if (!string.IsNullOrWhiteSpace(@Model.IconImg))
+                {
+                    <img id="icon" src="@Model.IconImg" />
+                }
+                else
+                {
+                    <img id="icon-default" src="https://cdn0.iconfinder.com/data/icons/jfk/512/chrome-512.png" />@*//TODO WebPush - prepare default icon ?*@
+                }
+                <div id="msgTxt">
+                    <div class="prop"></div>
+                    <p class="subject">@Model.Subject</p>
+                    <p>@Model.Body</p>
+                    <p class="sender">mydevlab-store.webpush.es</p>
+                    <div style="clear:both;"></div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+
+            @if (@Model.IsAction1Selected || @Model.IsAction2Selected)
+            {
+                if (!string.IsNullOrWhiteSpace(Model.Action1IconImg) || !string.IsNullOrWhiteSpace(Model.Action2IconImg))
+                {
+                    <div id="actionsWithImgs" class="actions-wrapper">
+                        <div id="img1" class="action-container">
+                            @if (!string.IsNullOrWhiteSpace(@Model.Action1IconImg) && Model.IsAction1Selected)
+                            {
+                                <img class="action-image" src="@Model.Action1IconImg">
+                            }
+                            else
+                            {
+                                <div class="prop1"></div>
+                            }
+                        </div>
+                        <div id="img2" class="action-container">
+                            @if (!string.IsNullOrWhiteSpace(@Model.Action2IconImg) && Model.IsAction2Selected)
+                            {
+                                <img class="action-image" src="@Model.Action2IconImg">
+                            }
+                            else
+                            {
+                                <div class="prop1"></div>
+                            }
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div id="actionsTitlesRow">
+                            <div class="action-container">
+                                <div class="prop1"></div>
+                                <p>
+                                    @if (Model.IsAction1Selected)
+                                    {
+                                        @Model.Action1Title
+                                    }
+                                </p>
+                            </div>
+                            <div class="action-container">
+                                <div class="prop1"></div>
+                                <p>
+                                    @if (Model.IsAction2Selected)
+                                    {
+                                        @Model.Action2Title
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div id="actionsPlain" class="actions-wrapper">
+                        <div class="action-container">
+                            <div class="prop1"></div>
+                            @if (Model.IsAction1Selected)
+                            {
+                                <div class="action-btn">
+                                    <p>
+                                        @Model.Action1Title
+                                    </p>
+                                </div>
+                            }
+                        </div>
+                        <div class="action-container">
+                            @if (Model.IsAction2Selected)
+                            {
+                                <div class="prop1"></div>
+                                <div class="action-btn">
+                                    <p>
+                                        @Model.Action2Title
+                                    </p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
