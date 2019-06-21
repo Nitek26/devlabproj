@@ -4,4 +4,5 @@
 
 /.vs
 /MyDevLab.DataAccess/bin/Debug/netcoreapp2.2
+/MyDevLab.DataAccess/obj/Debug/netcoreapp2.2/MyDevLab.DataAccess.csproj.FileListAbsolute.txt
 /MyDevLab.DataAccess/obj/Debug/netcoreapp2.2
